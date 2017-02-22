@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :achievements
   end
 
-  # root 'post#index'
+  root 'users#index'
 
 end
