@@ -1,3 +1,11 @@
+<h1>WINBANK</h1>
+<h2>All your big wins on one page</h2>
+
+<% if @user = current_user %>
+  <div id='add-achievement'> <%= link_to "Add Achievement", new_user_achievement_path(@user), class: 'add-achievement' %></div>
+<% end %>
+
+<div id="achievements-list">
 <h1>Achievements</h1>
 <h2>Theme Counts:</h2>
 <% @counts.each do |theme, value| %>
@@ -6,9 +14,8 @@
 
 <% if @achievements.any? %>
   <% @achievements.each do |achievement| %>
-    <p> <%= achievement.date %>
     <h2> <%= achievement.description %> </h2>
-    <br />
+    <%= achievement.date %></br>
     Themes:
     <% if achievement.leadership %>
       Leadership
@@ -16,9 +23,12 @@
     <% if achievement.efficiency %>
       Efficiency
       <% end %>
+      <% if achievement.mentorship %>
+        Mentorship
+        <% end %>
   <% end %>
 <% else %>
   You have no achievements yet.
 <% end %>
 
-<div id='add_achievement'><%= link_to "Add achievement", new_user_achievement_path(@user) %>
+</div>
