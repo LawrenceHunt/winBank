@@ -20,7 +20,7 @@ feature 'achievements' do
     end
   end
 
-  context 'achievement added with leadership tag' do
+ context 'achievement added with leadership tag' do
 
     scenario 'should show that the achievement is a leadership achievement' do
       user = User.create(email: 'test@test.com', password: 'password', id: 0)
