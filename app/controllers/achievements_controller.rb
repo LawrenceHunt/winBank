@@ -22,8 +22,7 @@ class AchievementsController < ApplicationController
   private
 
   def achievements_params
-    params.require(:achievement).permit(:description)
+    params.require(:achievement).permit(:description, :date, :leadership, :efficiency)
   end
-
 
 end

@@ -6,6 +6,7 @@
 
 <% if @achievements.any? %>
   <% @achievements.each do |achievement| %>
+    <p> <%= achievement.date %>
     <h2> <%= achievement.description %> </h2>
     <br />
     Themes:
