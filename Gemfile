@@ -35,10 +35,21 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'envyable'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '~> 2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'rspec-collection_matchers'
+  gem 'shoulda'
+  gem 'database_cleaner'
+  gem 'poltergeist'
   gem 'byebug', platform: :mri
-
 end
 
   gem 'rails_12factor', group: :production
