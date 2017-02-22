@@ -20,11 +20,18 @@ feature 'achievements' do
     end
   end
 
-  context 'adding an achievement' do
-    scenario 'should have an achievement form to fill in' do
-      visit '/users/0'
-      expect(page).to have_content "what's your latest achievement?"
+ context 'achievement added with leadership tag' do
+
+    scenario 'should show that the achievement is a leadership achievement' do
+      user = User.create(email: 'test@test.com', password: 'password', id: 0)
+      user.achievements.create(description: 'Test description', leadership: true)
+      visit 'users/0'
+      expect(page).not_to have_content 'You have no achievements yet'
+      expect(page).to have_content 'Test description'
+      expect(page).to have_content 'Leadership'
     end
+
   end
+
 
 end
