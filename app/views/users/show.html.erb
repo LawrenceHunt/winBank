@@ -1,6 +1,11 @@
 <% if @achievements.any? %>
   <% @achievements.each do |achievement| %>
     <h2> <%= achievement.description %> </h2>
+    <br />
+    Themes:
+    <% if achievement.leadership %>
+      Leadership
+    <% end %>
   <% end %>
 <% else %>
   You have no achievements yet.
