@@ -57,5 +57,18 @@ feature 'achievements' do
 
   end
 
+  context 'see the number of achievements with each tag' do
+
+    scenario 'show a count for leadership achievements' do
+      user = User.create(email: 'test@test.com', password: 'password', id: 0)
+      user.achievements.create(description: 'Efficient Leadership Achievement', efficiency: true, leadership:true)
+      visit 'users/0'
+      expect(page).to have_content("Theme Counts:")
+      expect(page).to have_content("Leadership: 1")
+      save_and_open_page
+    end
+
+  end
+
 
 end
