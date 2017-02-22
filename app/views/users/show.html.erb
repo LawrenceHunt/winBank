@@ -1,3 +1,4 @@
+
 <div id="postform">
   <h1><%= @user.email %> Achievements </h1>
 
@@ -27,3 +28,12 @@
   <span id="submit"><%= f.submit %></span>
 <% end %>
 </div>
+
+<% if @achievements.any? %>
+  <% @achievements.each do |achievement| %>
+    <h2> <%= achievement.description %> </h2>
+  <% end %>
+<% else %>
+  You have no achievements yet.
+<% end %>
+
