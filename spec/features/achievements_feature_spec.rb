@@ -33,5 +33,17 @@ feature 'achievements' do
 
   end
 
+  context 'achievement added with efficiency tag' do
+
+    scenario 'should show that the achievement is an efficiency achievement' do
+      user = User.create(email: 'test@test.com', password: 'password', id: 0)
+      user.achievements.create(description: 'Test description', efficiency: true)
+      visit 'users/0'
+      expect(page).not_to have_content 'You have no achievements yet'
+      expect(page).to have_content 'Test description'
+      expect(page).to have_content 'Efficiency'
+    end
+  end
+
 
 end
