@@ -1,34 +1,3 @@
-
-<div id="postform">
-  <h1><%= @user.email %> Achievements </h1>
-
-<%= form_for @achievement, html: {multipart: true} do |f| %>
-  <%= label :date %>
-  <%= date_field :date %></br></br>
-
-  <%= f.label :description %></br>
-  <%= f.text_area :description %></br></br>
-
-  <%= f.label :themes %></span></br>
-  <%= check_box_tag(:teamwork) %>
-  <%= label_tag(:teamwork, "Teamwork") %>
-  <%= check_box_tag(:innovation) %>
-  <%= label_tag(:innovation, "Innovation") %>
-  <%= check_box_tag(:mentorship) %>
-  <%= label_tag(:mentorship, "Mentorship") %>
-  <%= check_box_tag(:leadership) %>
-  <%= label_tag(:leadership, "Leadership") %>
-  <%= check_box_tag(:growth) %>
-  <%= label_tag(:growth, "Business growth") %>
-  <%= check_box_tag(:efficiency) %>
-  <%= label_tag(:efficiency, "Efficiency") %>
-
-  <!-- <%= f.file_field :image %></span> -->
-  </br>
-  <span id="submit"><%= f.submit %></span>
-<% end %>
-</div>
-
 <% if @achievements.any? %>
   <% @achievements.each do |achievement| %>
     <h2> <%= achievement.description %> </h2>
@@ -42,3 +11,4 @@
   You have no achievements yet.
 <% end %>
 
+<div id='add_achievement'><%= link_to "Add achievement", new_user_achievement_path(@user) %>
