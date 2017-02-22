@@ -14,7 +14,6 @@ feature 'achievements' do
     scenario 'should list the achievement' do
       user = User.create(email: 'test@test.com', password: 'password', id: 0)
       user.achievements.create(description: 'Test description')
-      puts user.achievements
       visit 'users/0'
       expect(page).not_to have_content 'You have no achievements yet'
       expect(page).to have_content 'Test description'

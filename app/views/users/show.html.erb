@@ -1,1 +1,7 @@
-You have no achievements yet.
+<% if @achievements.any? %>
+  <% @achievements.each do |achievement| %>
+    <h2> <%= achievement.description %> </h2>
+  <% end %>
+<% else %>
+  You have no achievements yet.
+<% end %>
