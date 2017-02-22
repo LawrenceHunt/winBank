@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       counts[:efficiency] += 1 if achievement.efficiency
     end
     counts
-    require 'pry'; binding.pry
   end
 
 end

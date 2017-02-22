@@ -33,18 +33,6 @@ feature 'achievements' do
 
   end
 
-  context 'creating achievements' do
-  scenario 'prompts user to fill out a form, then displays the new acheivement' do
-    user = User.create(email: 'test@test.com', password: 'password', id: 0)
-    visit 'users/0'
-    click_link 'Add achievement'
-    fill_in 'Description', with: 'I helped run a craftathon at Makers'
-    click_button 'Add achievement'
-    expect(page).to have_content 'I helped run a craftathon at Makers'
-    expect(current_path).to eq 'users/0'
-  end
-end
-
 context 'achievement added with efficiency tag' do
 
     scenario 'should show that the achievement is an efficiency achievement' do
