@@ -1,9 +1,5 @@
 class AchievementsController < ApplicationController
 
-  def index
-
-  end
-
   def new
     @user = current_user
     @achievement = Achievement.new
