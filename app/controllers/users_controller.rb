@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @achievements = @user.achievements
+    @achievements = @user.achievements.all
   end
 
 end
